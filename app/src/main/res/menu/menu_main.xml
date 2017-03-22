@@ -1,0 +1,17 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="timeman.timemanagement.MainActivity">
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="100"
+        android:title="@string/action_settings"
+        app:showAsAction="never" />
+        <item android:id="@+id/add"
+            android:title="Add"
+            android:icon="@drawable/add"
+            android:showAsAction="always"/>
+        <item android:id="@+id/stats"
+            android:title="TS"
+            android:showAsAction="always"/>
+</menu>
