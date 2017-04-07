@@ -8,8 +8,7 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:supportsRtl="true"
-
-        android:theme="@style/AppTheme"
+        android:theme="@style/AppTheme.NoActionBar"
         >
         <activity
             android:name=".TaskActivity"
@@ -20,6 +19,9 @@
             android:theme="@style/AppTheme.NoActionBar">
             </activity>
         <activity android:name=".AddTaskActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity android:name=".InnerListActivity"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity android:name=".Other.Statistics"

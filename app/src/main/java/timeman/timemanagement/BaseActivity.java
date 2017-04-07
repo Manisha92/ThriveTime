@@ -4,23 +4,47 @@ import android.app.Activity;
 import android.app.Application;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 
 /**
  * Created by manisha on 21/3/17.
  */
 public class BaseActivity extends AppCompatActivity implements Application.ActivityLifecycleCallbacks{
-
+Toolbar toolbar;
+    Boolean useToolbar=true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
+        useToolbar();
 
 
+    }
+public boolean useToolbar(){
+    return useToolbar;
+}
+    @Override
+    public void setContentView(int layoutResID) {
+        View view = getLayoutInflater().inflate(layoutResID, null);
+        configureToolbar(view);
+        super.setContentView(view);
+    }
 
+    private void configureToolbar(View view) {
+        toolbar = (Toolbar) view.findViewById(R.id.toolbar);
+        if (toolbar != null) {
+            if (useToolbar()) {
+                setSupportActionBar(toolbar);
+                getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            } else {
+                toolbar.setVisibility(View.GONE);
+            }
+        }
     }
 
     @Override

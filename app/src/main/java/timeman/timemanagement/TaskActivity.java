@@ -33,7 +33,12 @@ public class TaskActivity extends BaseActivity {
         getSupportActionBar().setDisplayShowTitleEnabled(true);
 recyclerView= (RecyclerView) findViewById(R.id.recycler_view);
 
-        mAdapter = new TaskAdaptor(taskList);
+       /* mAdapter = new TaskAdaptor(taskList, new CustomListener() {
+            @Override
+            public void onItemClick(View v, int position) {
+
+            }
+        });*/
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             recyclerView.setNestedScrollingEnabled(true);
         }
@@ -41,6 +46,8 @@ recyclerView= (RecyclerView) findViewById(R.id.recycler_view);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(mAdapter);
+
+
 
         prepareMovieData();
 
